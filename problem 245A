@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+	long s1=0, s2=0, t1=0, t2=0;
+	int n; cin>>n;
+	int t[n+1], x[n+1], y[n+1];
+	for (int i=1;i<=n;i++) 
+	{
+		cin>>t[i]>>x[i]>>y[i];
+		if (t[i]==1) s1+=10; else s2+=10;
+	}
+	for (int i=1;i<=n;i++)
+	{
+		if (t[i]==1) t1+=x[i]; else t2+=x[i];
+	}
+	if (t1*2<s1) cout<<"DEAD\n"; else cout<<"LIVE\n";
+	if (t2*2<s2) cout<<"DEAD"; else cout<<"LIVE";
+}
